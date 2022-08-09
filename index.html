@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-
+    
 </head>
 <body>
     <header>
@@ -26,31 +26,43 @@
         <div class="card">
             <form class="lineInput">
                 <label>Produto</label>
-                <input type="text" id="nome" placeholder="Nome do produto" required>
+                <input class="input" type="text" id="nome" placeholder="Nome do produto" >
             
                 <label>Valor</label>
-                <input type="text" id="preco" placeholder="Valor do produto" required>
+                <input class="input" type="text" id="preco" placeholder="Valor do produto">
             </form>
             
-            <button id="salvar">Salvar</button>
-            <button id="limpar">Limpar</button>
+            <button onclick="appCadastro.salvar()" id="salvar">Salvar</button>
+            <button onclick="appCadastro.limpar()" id="limpar">Limpar</button>
         </div>
 
         <div class="content">
-            <table border="1">
+            <table border="1" id="tabelaProduto">
                 <thead>
                     <th class="center">ID</th>
                     <th>Produto</th>
                     <th>Valor</th>
                     <th class="center">Ações</th>
                 </thead>
-                <tbody id="corpoTabela" class="corpoTabela">
-                    
-                </tbody>
+                <!-- <table class="corpoDaLista" border="=1"> -->
+                    <tbody id="corpoTabela" class="corpoTabela">
+                        
+                    </tbody>
+                </table>
                 
-            </table>
+            <!-- </table> -->
+                
         </div>
     </main>
     <script src="assets/main.js" ></script>
 </body>
 </html>
+<!-- <tr>
+    <td class="center">1</td>
+    <td>Mesa da Sala de estar</td>
+    <td>1900</td>
+    <td class="center">
+        <img src="img/editar.png" alt="">
+        <img src="img/deletar.png" alt="">
+    </td>
+</tr> -->

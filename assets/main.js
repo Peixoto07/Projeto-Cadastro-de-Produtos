@@ -1,60 +1,100 @@
-const dados = {
-    id: '8',
-    nome: 'pc',
-    preco: '100 '
-}
+function criaProduto() {
+    const getArrayProduto = () => JSON.parse(localStorage.getItem('meu_array'))
+    
+    const novoProduto = {
+        
+        id: 1,
+        arrayProdutos: [],
+        
 
-const getLocalStorage = () => JSON.parse(localStorage.getItem('dbProduto')) ?? []
-const setLocalStorage = (dbProduto) => localStorage.setItem("dbProduto", JSON.stringify(dbProduto))
+        salvar() {
+
+            const produto = novoProduto.lerDados();
+            if (novoProduto.validaCampos(produto)) {
+                // console.log(novoProduto.arrayProdutos);
+                novoProduto.adicionaNoDB(produto)
+                novoProduto.limpaTbody()
+                
+            }
+            // novoProduto.criaLinha()
+            novoProduto.atualizaTabela()
+            novoProduto.limpar()
+        },
+
+        criaLinha(id,nome,preco ){
+            const novaLinha = document.createElement('tr')
+            novaLinha.innerHTML = `
+                <td class="center">${id}</td>
+                <td>${nome}</td>
+                <td>R$ ${preco}</td>
+                <td class="center">
+                    <img src="img/editar.png" alt="">
+                    <img src="img/deletar.png" alt="">
+                </td>
+            `
+            document.getElementById('corpoTabela').appendChild(novaLinha)
+            
+        },
+        
+        atualizaTabela() {
+            // novoProduto.limpaTbody()
+            getArrayProduto().forEach(novaLinha => 
+                novoProduto.criaLinha(novaLinha.id,novaLinha.nome,novaLinha.preco))
+                return
+
+        },
 
 
-// *** MÉTODOS: EDITAR, DELETAR E CRIA ***
-const editarProduto = (index, produto) => {
-    const novoProduto = getLocalStorage()
-    novoProduto[index] = produto
-    setLocalStorage(novoProduto)
-}
+        adicionaNoDB(produto) {
+            const arrayDB = getArrayProduto() ?? []
+            arrayDB.push(produto)
+            novoProduto.id++
+            // localStorage.meu_array = JSON.stringify(novoProduto.arrayProdutos)
+            localStorage.setItem('meu_array', JSON.stringify(arrayDB))
+        
+            
+        },
+        
 
-const deletaProduto = (index) => {
-    const lerProduto = getLocalStorage()
-    lerProduto.splice(index, 1)
-    setLocalStorage(lerProduto)
-}
 
-const criaProduto = (produto) => {
-    const dbProduto = getLocalStorage()
-    dbProduto.push(produto)
-    setLocalStorage(dbProduto)
-}
+        lerDados() {
 
-// *** INTERAÇÃO COM USUÁRIO ***
+            const produto = {}
 
-const valorNome = () => document.getElementById('nome').value
-const valorPreco = () => document.getElementById('preco').value
+            produto.id = novoProduto.id;
+            produto.nome = document.getElementById('nome').value;
+            produto.preco = document.getElementById('preco').value;
 
-const validaForm = () => {
-    return valorNome() != "" && valorPreco() != "";
-};
+            return produto
+        },
 
-const salvaInput = () => {
-    const inputValido = validaForm();
+        validaCampos(produto) {
+            if (produto.nome == '' || produto.preco == '') {
+                alert("Preencha todos os dados!!!")
+                return false
+            }
+            return true
+        },
 
-    if (!inputValido) {
-        return alert("Preencha todos os dados!!!")
-    }
-    else {
-        const produto = {
-            nome: valorNome(),
-            preco: valorPreco()
+        limpaTbody (){
+            const corpoTabela =document.getElementById('corpoTabela')
+            while(corpoTabela.firstChild){
+                corpoTabela.removeChild(corpoTabela.lastChild)
+            }
+        },
+
+        limpar() {
+            document.getElementById('nome').value = ''
+            document.getElementById('preco').value = ''
+
         }
-        criaProduto(produto);
     }
-
+    
+    atualizaTabela = novoProduto.atualizaTabela
+    return novoProduto
+    
 }
 
-const limpaInput = () => {
-    console.log("limpou")
-}
-// *** EVENTOS ***
-document.getElementById('salvar').addEventListener('click', salvaInput);
-document.getElementById('limpar').addEventListener('click', limpaInput);
+const appCadastro = criaProduto()
+atualizaTabela()
+
