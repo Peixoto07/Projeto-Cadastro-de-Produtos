@@ -4,8 +4,14 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    ;
     background-color: rgb(243, 243, 243);
+    min-width: 100vw;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding:0;
    
 }
 
@@ -14,13 +20,18 @@ header {
     padding: 10px;
     color: #fff;
     text-align: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
 }
 
 main {
-    padding: 30px 50px;
-    width: 60%;
+    padding-top: 20px;
+    width: 90%;
     margin: 0 auto;
-    position: relative;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .card {
@@ -31,13 +42,15 @@ main {
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.111);
     transition: all ease 1s;
     display: block;
+    width: 60%;
+    margin: 0 auto;
 }
 
 .modalCard {
-    width: 80%;
+    width: 70%;
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.227);
     border: 2px solid rgb(162, 255, 22);
-    bottom: -20%;
+    bottom: -50%;
     display: block;
     margin: 0 auto;
     transform: translate( 0,20%);
@@ -50,14 +63,20 @@ main {
     display: block;
 }
     
-
+.title {
+    text-align: center;
+    padding-bottom: 10px;
+}
 
 
 .lineInput {
-    display: grid;
+    display: flex;
     margin-bottom: 5px;
+    flex-direction: column;
 
 }
+
+
 
 .input {
     padding: 10px;
@@ -84,6 +103,13 @@ button:hover {
 
 .content {
     margin-top: 15px;
+    width: 60vw;
+    display:flex;
+    margin: 20px;
+    justify-content:center ;
+    align-items: center;
+    
+    
 }
 
 table {
@@ -146,4 +172,8 @@ table td img {
     width: 80px;
     background-color: rgb(202, 56, 36);
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.227)
+}
+
+.tabelaProduto{
+    width: 1200px;
 }

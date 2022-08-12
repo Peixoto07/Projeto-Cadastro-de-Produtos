@@ -49,8 +49,6 @@ function criaProduto() {
 
         salvar() {
             const produto = novoProduto.lerDados();
-            // newID()
-            console.log(novoProduto.editId);
 
             if (novoProduto.validaCampos(produto)) {
                 if (novoProduto.editId == null) {
@@ -60,7 +58,6 @@ function criaProduto() {
                 }
                 novoProduto.limpaTbody()
                 novoProduto.atualizaTabela()
-
             }
 
             novoProduto.limparCampos()
@@ -91,17 +88,14 @@ function criaProduto() {
 
         },
 
-
         adicionaNoDB(produto) {
-            produto.preco= parseFloat(produto.preco).toFixed(2)
+            produto.preco = parseFloat(produto.preco).toFixed(2)
             const arrayDB = getArrayProduto() ?? []
             arrayDB.push(produto)
             novoProduto.id++
             setArrayProduto(arrayDB)
 
         },
-
-
 
         lerDados() {
 
@@ -162,12 +156,10 @@ function criaProduto() {
                     valueNome.value = arrayDB[i].nome
                     valuePreco.value = arrayDB[i].preco
                     botaoSalvar.innerText = 'Atualizar'
-                    botaoLimpar.innerText = 'Cancelar'
-                    console.log(id);
+                    botaoLimpar.innerText = 'Cancelar'                
                 }
             }
         },
-
 
         deletar(id, i) {
             const arrayDB = getArrayProduto()
@@ -181,7 +173,6 @@ function criaProduto() {
 
                 }
             }
-
         },
     }
 
