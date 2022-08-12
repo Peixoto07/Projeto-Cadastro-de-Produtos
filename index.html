@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Produtos</title>
     
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="./assets/CSS/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
@@ -23,17 +23,17 @@
             <span>Lista de produtos</span>
         </div>
 
-        <div class="card">
+        <div class="card" id="card" >
             <form class="lineInput">
                 <label>Produto</label>
-                <input class="input" type="text" id="nome" placeholder="Nome do produto" >
+                <input data-index="new" class="input" type="text" id="nome" placeholder="Nome do produto" >
             
                 <label>Valor</label>
-                <input class="input" type="text" id="preco" placeholder="Valor do produto">
+                <input class="input" type= 'number' id="preco" placeholder="Valor do produto">
             </form>
             
-            <button onclick="appCadastro.salvar()" id="salvar">Salvar</button>
-            <button onclick="appCadastro.limpar()" id="limpar">Limpar</button>
+            <button  onclick="appCadastro.salvar()" id="salvar">Salvar</button>
+            <button  onclick="appCadastro.limparCampos()" id="limpar">Limpar</button>
         </div>
 
         <div class="content">

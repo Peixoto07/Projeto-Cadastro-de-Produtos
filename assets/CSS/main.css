@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    ;
+    background-color: rgb(243, 243, 243);
+   
+}
+
+header {
+    background-color: blueviolet;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+}
+
+main {
+    padding: 30px 50px;
+    width: 60%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.card {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.111);
+    transition: all ease 1s;
+    display: block;
+}
+
+.modalCard {
+    width: 80%;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.227);
+    border: 2px solid rgb(162, 255, 22);
+    bottom: -20%;
+    display: block;
+    margin: 0 auto;
+    transform: translate( 0,20%);
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    
+    transition: all ease 1s;
+    display: block;
+}
+    
+
+
+
+.lineInput {
+    display: grid;
+    margin-bottom: 5px;
+
+}
+
+.input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    outline: 0;
+    margin-bottom: 10px;
+}
+
+button {
+    border: 0px;
+    padding: 10px;
+    outline: 0;
+    background-color: blueviolet;
+    color: #fff;
+    border-radius: 3px;
+    font-weight: bold;
+    transition: all ease 0.3s;
+}
+
+button:hover {
+    background-color: rgb(90, 0, 174);
+}
+
+.content {
+    margin-top: 15px;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    width: 100%;
+    background-color: #fff;
+}
+
+table th {
+    background-color: rgb(230, 230, 230);
+}
+
+table th,
+td {
+    padding: 1px 5px;
+    text-align: left;
+}
+
+table td img {
+    width: 27px;
+    margin: 1px;
+    padding-right: 2px;
+
+}
+
+.buttonAcoes {
+    width: 27px;
+    margin: 1px;
+    padding-right: px;
+    border-radius: 5px;
+    transition: all ease 0.5s;
+}
+
+.buttonAcoes:hover {
+    width: 30px;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.227)
+}
+
+.center {
+    text-align: center;
+}
+
+.atualizar{
+    background-color: rgb(121, 218, 57);
+    transition: all ease 0.2s;
+}
+
+.atualizar:hover {
+    width: 80px;
+    background-color: rgb(26, 172, 0);
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.227)
+}
+
+.cancelar{
+    background-color: rgb(226, 76, 56);
+    transition: all ease 0.2s;
+}
+.cancelar:hover {
+    width: 80px;
+    background-color: rgb(202, 56, 36);
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.227)
+}
