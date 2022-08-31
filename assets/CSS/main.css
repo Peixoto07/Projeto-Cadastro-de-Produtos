@@ -17,7 +17,7 @@ body {
 
 header {
     background-color: blueviolet;
-    padding: 10px;
+    padding: 10px 0;
     color: #fff;
     text-align: center;
     justify-content: center;
@@ -42,17 +42,16 @@ main {
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.111);
     transition: all ease 1s;
     display: block;
-    width: 60%;
-    margin: 0 auto;
+    width: 90%;
+    
 }
 
 .modalCard {
-    width: 70%;
+    width: 90%;
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.227);
     border: 2px solid rgb(162, 255, 22);
     bottom: -50%;
     display: block;
-    margin: 0 auto;
     transform: translate( 0,20%);
     background-color: #fff;
     padding: 20px;
@@ -103,7 +102,7 @@ button:hover {
 
 .content {
     margin-top: 15px;
-    width: 60vw;
+    width: 100vw;
     display:flex;
     margin: 20px;
     justify-content:center ;
@@ -114,7 +113,7 @@ button:hover {
 
 table {
     border-collapse: collapse;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     width: 100%;
     background-color: #fff;
 }
@@ -176,4 +175,22 @@ table td img {
 
 .tabelaProduto{
     width: 1200px;
+}
+
+@media (min-width: 700px){
+    .content{
+        width: 90%;
+    }
+    .card{
+        width: 80%;
+    }
+}
+
+@media (min-width: 900px){
+    .content{
+        width: 70%;
+    }
+    .card{
+        width: 60%;
+    }
 }
